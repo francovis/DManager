@@ -1,0 +1,136 @@
+<div class="d-flex pointer">
+	<p><label>Pick mouse position to facilitate macro creation</label></p>
+	<p><input id="macro-location-helper" readonly data-trigger="getPos:#macro-location-helper" type="text"></p>
+</div>
+<table id="macros">
+	<thead>
+		<tr>
+			<th data-key="entry">Entry</th>
+			<th data-key="result">Result</th>
+			<th class="no-opacity"></th>
+		</tr>
+	</thead>
+	<tbody data-databinding="td:not(:last-child)|editRow||td:last-child|deleteEntry">
+	</tbody>
+</table>
+<button type="button" id="add-macro" data-trigger="showInvisible">New</button>
+<form class="no-trigger invisible" data-refer="macros" data-id="entry" id="macro">
+	<div class="d-flex">
+		<p><label for="entry">Entry</label></p>
+		<p><input id="entry" name="entry" type="text"></p>
+	</div>
+	<div class="d-flex">
+		<p><label for="result">Result</label></p>
+		<p><input id="result" name="result" type="text"></p>
+	</div>
+	<div class="d-flex">
+		<p><button type="button" id="save" data-trigger="saveForm">Save</button></p>
+		<p><button type="button" id="cancel" data-trigger="resetForm">Cancel</button></p>
+	</div>
+</form>
+<fieldset>
+	<legend>How to use</legend>
+	<pre class="scroll-500">	
+entry
+	simple character a -> z, 0 -> 9, special char and others
+	do not use autoclick/autokey start/stop button
+	COMBINED TRIGGER (eg: ctrl+a) NOT IMPLEMENTED YET
+result
+	called sequence in doc
+	group of actions, each action is separated by +
+	reserved char (unapropried behaviour can appear if used) +,:
+	eg: a+b+c+d+f+g+h
+delay:sec
+	sec can be float 
+	eg: a+b+delay:1.5+w+r
+repeat[t:seq]
+	repeat [t] times a [sequence]
+	eg: repeat[8:a+b+c+delay:1.5]
+click
+	trigger left button click on current position
+	all [click] parameters are optionals
+click:btn
+	trigger [Butten.left or Button.right] click on current position
+click:btn:t
+	trigger [Butten.left or Button.right] click [t] times on current position
+	on some UI, 
+		it's interresting to trigger 3 - 4 click 
+		to perform double click (old UI, frame was not focused, latency, laggy computer, ...)
+	eg: click:Butten.right:3
+click:btn:t:x,y
+	trigger [Butten.left or Button.right] click [t] times on [x,y] position
+	eg:	click:Butten.right:5:1200,920
+		click:::1200,920
+sentence:str
+	paste [str]
+	eg: sentence:Hello
+combine:pipeSequence
+	combine a keystack
+	implemented as 'press first to last and release first to last'
+	[pipeSequence] is a sequence using | instead of +
+	only char and special char is allowed in combine
+	combine can be used in repeat
+	eg:	combine:a|b|c|j
+		combine:alt|esc
+		repeat[5:combine:a|5|6|b+delay:.5+click:Button.left:3:350,700]
+resetmousepos
+	reset mouse to initial position
+	standalone, can't be used in [click] as position but can be sequenced
+	eg: reset+click
+imgpos:path
+	recognize image position on screen by hardisk stored screenshot
+	not instantanate, can take a bit while (or infinite loop if no img on screen)
+	[path] is the path in the computer
+	[path] can be absolute or relative to [py_process] directory
+	do not use reserved char on the path (except for disk)
+	standalone, can't be used in [click] as position but can be sequenced
+	eg:	imgpos:C:\my_folder\my_screenshots\some_screenshot.png
+		imgpos:C:\my_folder\my_screenshots\some_screenshot.png+click
+		imgpos:C:\my_folder\my_screenshots\some_screenshot.png+delay:.001+click
+infinite:sequence
+	infinite loop of [sequence]
+	start and stop by its entry
+special char
+	f1 to f20
+	alt
+	alt_gr
+	alt_l
+	alt_r
+	backspace
+	caps_lock
+	cmd
+	cmd_l
+	cmd_r
+	ctrl
+	ctrl_l
+	ctrl_r
+	delete
+	down
+	end
+	enter
+	esc
+	home
+	insert
+	left
+	media_next
+	media_play_pause
+	media_previous
+	media_volume_down
+	media_volume_mute
+	media_volume_up
+	menu
+	num_lock
+	page_down
+	page_up
+	pause
+	print_screen
+	right
+	scroll_lock
+	shift
+	shift_l
+	shift_r
+	space
+	tab
+	up
+	</pre>
+</fieldset>

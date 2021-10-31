@@ -1,0 +1,234 @@
+*{
+	-webkit-app-region : no-drag;
+	-webkit-user-select: none;
+	margin: auto;
+}
+body{
+	box-shadow: 0px 0px .5px .5px #ba34eb;
+}
+main{
+	background-color: #8067e5;
+	font-family: "Segoe UI";
+	overflow: auto;
+	text-align: center;
+}
+article{
+	padding: 10px;
+}
+#drag-bar{
+	color: white;
+	height: 20px;
+	padding: 6px 5px 5px 6px;
+	display: flex;
+	justify-content: space-between;
+	-webkit-app-region : drag;
+	background-color: #8067e5;
+}
+#drag-bar *{	
+	margin: initial;
+}
+#drag-bar:not(#close,#reduce):{
+	font-style: italic;
+	font-family: "Segoe UI";	
+}
+#close,#reduce{  
+	cursor: pointer;
+	font-family: monospace, sans-serif;
+	font-weight: bold;
+	font-size: 120%;
+	padding-right: 5px;
+}
+#close{
+	transform: translate(0px,-2px);		
+}
+#close:active{
+	transform: translate(1px,-1px);
+}
+#reduce:active{
+	transform: translate(1px,-6px);	
+}
+#reduce{
+	transform: translate(0px,-7px);	
+}
+.d-flex{
+	display: flex;
+}
+#tab-content{
+	border: 1px solid white;
+	text-align: center;
+	background-color: white;
+}
+.tab{
+	width: 18.4%;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-left: 2.5px;
+	margin-right: 2.5px;
+	border: 1px solid white;
+	border-bottom: 0;
+	cursor: pointer;
+	border-radius: 3px 3px 0 0;
+	background-color: white;
+}
+.tab:first-child{
+	margin-left: 0px;	
+}
+.tab:last-child{
+	margin-right: 0px;	
+}
+.tab:not(.active){
+	background-color:grey;
+	border: 1px solid grey;
+	border-bottom: 0;
+}
+button, input, select, option, input[type=checkbox]{
+	background-color: white;
+	color: #8067e5;
+	border-radius: 2px;
+	border: 1px solid #8067e5;
+}
+button:not(#python-listener){
+	border-radius: 5px;
+	box-shadow: -5px 10px 10px -5px grey;
+	transition: .1s;
+	padding: 7px 12px 5px 12px;
+	cursor: pointer;
+	margin: 5px;
+	font-weight: bold;
+	color: white;
+	background-color: #8067e5;
+}
+button:not(#python-listener):active{
+	box-shadow: 0;
+	cursor: pointer;
+	margin: 5px;
+}
+button:not(#python-listener):hover:not(.active){	
+	transform: scale(1.1);
+}
+#python-listener{
+	padding-top: 2px;
+	cursor: pointer;
+	border-radius: 3px;
+	margin-right: 10px;
+	border: 1px solid orange;
+}
+#python-listener:active{
+	border: 1px solid red;	
+}
+#python-listener::before{
+	content: "\27f3";
+	font-weight: bold;
+	margin-right: 10px;
+}
+td,th{
+	border: 1px solid #ba34eb;
+	transition: .1s;
+}
+table{
+	width: 95%;
+	margin-top: 5px;
+	margin-bottom: 5px;	
+}
+tbody tr:hover{
+	color: white;
+	background-color: #8067e5;
+	cursor: pointer;
+}
+form p{
+	width: 50%;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+form p:first-child{
+	text-align: right;
+	padding-right: 2%;
+}
+form p:nth-child(2){
+	text-align: left;
+	padding-left: 2%;
+}
+form div.d-flex{
+	align-items: center
+}
+form > div:first-child{
+	padding-top: 6px;	
+}
+form > div:last-child{
+	margin-bottom: 6px;	
+}
+form button{
+	width: 100px;
+	height: 50px;
+}
+form input[readonly]{
+	cursor: not-allowed;
+}
+form .pointer input[readonly]{
+	cursor: pointer;
+}
+.invisible{
+	display: none;
+}
+#accounts tbody td:last-child::before,#macros tbody td:last-child::before,.error span:last-child::before{
+  content: '\00d7';
+  font-size: 150%;
+  color: red;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
+#accounts tbody td:first-child::before{
+  content: '\21F5';
+  color: light-green;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
+#accounts tbody td:first-child:hover{
+	cursor: move;
+}
+.no-opacity{
+	opacity: 0;
+}
+tr.in-edition{
+	background-color: coral;
+}
+.error{
+	padding: 12px;
+	border-radius: 10px;
+	display: none;
+	justify-content: space-between;
+	color: #73000c;
+	background-color: #ffcdd2;
+}
+.error span:first-child{
+	text-align: left;
+	margin: 0;
+}
+.error span:last-child{
+	text-align: right;
+	cursor: pointer;
+	margin: 0;
+}
+.padding-white{
+	padding: 10px;
+	background-color: white;
+}
+tr.down{
+	transform: translateY(-105%);
+}
+tr.up{
+	transform: translateY(105%);
+}
+form fieldset{
+	margin: 10px;
+	border-radius: 5px;
+}
+.scroll-500{
+	max-height: 200px;
+	overflow: auto;
+}
+pre{
+	margin: 0;
+	text-align: left;
+	width: 100%:
+}

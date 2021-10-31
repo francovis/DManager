@@ -1,0 +1,35 @@
+<div>See settings for complete connection</div>
+<table id="accounts">
+	<thead>
+		<tr>
+			<th class="no-opacity"></th>
+			<th data-key="login">Login</th>
+			<th data-key="password">Password</th>
+			<th data-key="pseudo">Pseudo</th>
+			<th class="no-opacity"></th>
+		</tr>
+	</thead>
+	<tbody 	data-databinding="td:not(:first-child,:last-child)|editRow||td:first-child|drag|mousedown||td:first-child|drop|mouseup||td:last-child|deleteEntry"
+			data-trigger="translateTr" data-eventtype="mousemove">
+	</tbody>
+</table>
+<button type="button" id="add-account" data-trigger="showInvisible">New</button>
+<button type="button" id="add-account" data-trigger="launchAccounts">Launch accounts</button>
+<form class="no-trigger invisible" data-refer="accounts" data-id="login" id="account">
+	<div class="d-flex">
+		<p><label for="login">Login</label></p>
+		<p><input id="login" name="login" type="text"></p>
+	</div>
+	<div class="d-flex">
+		<p><label for="password">Password</label></p>
+		<p><input id="password" name="password" type="password"></p>
+	</div>
+	<div class="d-flex">
+		<p><label for="pseudo">Pseudo</label></p>
+		<p><input id="pseudo" name="pseudo" type="text"></p>
+	</div>	
+	<div class="d-flex">
+		<p><button type="button" id="save" data-trigger="saveForm">Save</button></p>
+		<p><button type="button" id="cancel" data-trigger="resetForm">Cancel</button></p>
+	</div>
+</form>

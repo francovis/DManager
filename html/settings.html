@@ -1,0 +1,37 @@
+<form id="setting-config">
+	<div class="d-flex">
+		<p><label for="color">Font color (hexa)</label></p>
+		<p><input id="color" name="color" type="text"></p>
+	</div>
+	<div class="d-flex">
+		<p><label for="background-color">Background color (hexa)</label></p>
+		<p><input id="background-color" name="background-color" type="text"></p>
+	</div>
+	<fieldset class="pointer">
+		<legend>Window account info (full autoconnect + grouping)</legend>
+		<div class="d-flex">
+			<p><label">Account name position</label></p>
+			<p><input readonly data-trigger="getPos:[name=acc-name-position]" name="acc-name-position" type="text"></p>
+		</div>
+		<div class="d-flex">
+			<p><label>.exe fullpath</label></p>
+			<p><input type="text" name="exe-fullpath" type="text"></p>
+		</div>
+		<div class="d-flex">
+			<p><label>Server position</label></p>
+			<p><input readonly data-trigger="getPos:[name=server-position]" name="server-position" type="text"></p>
+		</div>
+		<div class="d-flex">
+			<p><label>Character position</label></p>
+			<p><input readonly data-trigger="getPos:[name=character-position]" name="character-position" type="text"></p>
+		</div>
+		<div class="d-flex">
+			<p><label>Tchat position</label></p>
+			<p><input readonly data-trigger="getPos:[name=tchat-position]" name="tchat-position" type="text"></p>
+		</div>
+		<div class="d-flex">
+			<p><label>Ok button group position</label></p>
+			<p><input readonly data-trigger="getPos:[name=btn-group-position]" name="btn-group-position" type="text"></p>
+		</div>	
+	</fieldset>
+</form>

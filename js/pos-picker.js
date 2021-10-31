@@ -1,0 +1,1 @@
+window.onload =	() => document.body.addEventListener('click', event => twoWayEvent.closePosPicker(event.x, event.y));

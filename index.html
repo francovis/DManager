@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/auto-clicker.css">
+	<script type="application/javascript" src="js/index.js"></script>
+    <title>Clicker</title>
+  </head>
+  <body>
+	<div id="drag-bar">
+		<span>Clicker</span>
+		<div class="d-flex align-bottom">
+			<button type="button" id="python-listener">Reduce and restart all</button>
+			<div id="reduce">_</div>
+			<div id="close">x</div>
+		</div>
+	</div>
+	<main>
+		<article>
+			<div id="tabs" class="d-flex">
+				<div class="tab active" data-page="html/auto-clicker.html">Auto clicker</div>
+				<div class="tab" data-page="html/auto-key.html">Auto key</div>
+				<div class="tab" data-page="html/macro-recorder.html">Macros</div>
+				<div class="tab" data-page="html/account-manager.html">Account list</div>
+				<div class="tab" data-page="html/settings.html">Settings</div>			
+			</div>
+			<div class="padding-white">
+				<div id="error-zone" class="error">
+					<span></span>
+					<span data-trigger="closeError"></span>
+				</div>
+			</div>
+			<div id="tab-content"></div>
+		</article>
+	</main>
+  </body>
+</html>
